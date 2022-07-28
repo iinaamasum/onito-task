@@ -1,10 +1,12 @@
-import ReceiptForm from './Pages/ReceiptForm/ReceiptForm';
+import { Toaster } from 'react-hot-toast';
+import Home from './Pages/ReceiptForm/Home';
 import './style/style.css';
 
 function App() {
   return (
     <>
-      <ReceiptForm />
+      <Home />
+      <Toaster />
     </>
   );
 }

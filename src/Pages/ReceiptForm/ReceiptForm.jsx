@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { BiCommand } from 'react-icons/bi';
 
-const ReceiptForm = () => {
-  const [receipt, setReceipt] = useState([]);
+const ReceiptForm = ({ receipt, setReceipt }) => {
   const [paySelect, setPaySelect] = useState('Cash');
   console.log(paySelect);
 
@@ -15,10 +15,11 @@ const ReceiptForm = () => {
       remark: e.target.remark.value,
     };
     setReceipt([...receipt, data]);
+    toast.success('Receipt sent successfully');
     e.target.reset();
   };
 
-  console.log(receipt);
+  // console.log(receipt);
 
   return (
     <section className="bg-[#dddeee] py-10">
@@ -86,6 +87,9 @@ const ReceiptForm = () => {
             <div className="flex justify-around items-center w-full">
               <button
                 type="reset"
+                onClick={() => {
+                  toast.error('Form cleared');
+                }}
                 className="border-2 border-red-500 rounded px-10 py-2 text-lg font-medium uppercase text-red-500 hover:text-black hover:bg-red-500 flex flex-col"
               >
                 <span>Cancel</span>
