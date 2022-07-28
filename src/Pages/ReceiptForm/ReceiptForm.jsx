@@ -4,7 +4,7 @@ import { BiCommand } from 'react-icons/bi';
 
 const ReceiptForm = ({ receipt, setReceipt }) => {
   const [paySelect, setPaySelect] = useState('Cash');
-  console.log(paySelect);
+  // console.log(paySelect);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -12,11 +12,15 @@ const ReceiptForm = ({ receipt, setReceipt }) => {
       date: e.target.date.value,
       amount: e.target.amount.value,
       payMethod: paySelect,
-      remark: e.target.remark.value,
+      remark: e.target.remark.value || 'Not Provided',
     };
-    setReceipt([...receipt, data]);
-    toast.success('Receipt sent successfully');
-    e.target.reset();
+    if (data.date === '' || data.amount === '' || data.payMethod === '') {
+      toast.error('Required data of the form is not provided yet.');
+    } else {
+      setReceipt([...receipt, data]);
+      toast.success('Receipt sent successfully');
+      e.target.reset();
+    }
   };
 
   // console.log(receipt);
