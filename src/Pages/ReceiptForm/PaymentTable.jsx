@@ -3,8 +3,8 @@ import React from 'react';
 const PaymentTable = ({ receipt }) => {
   return (
     <section className="bg-[#f7f7f7] min-h-[50vh]">
-      <div class="overflow-x-auto container mx-auto px-5 md:px-7 lg:px-10 max-w-[1300px]">
-        <table class="table table-zebra w-full">
+      <div className="overflow-x-auto container mx-auto px-5 md:px-7 lg:px-10 max-w-[1300px]">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
               <th></th>

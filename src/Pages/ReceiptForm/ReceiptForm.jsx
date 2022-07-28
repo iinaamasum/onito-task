@@ -57,7 +57,7 @@ const ReceiptForm = ({ receipt, setReceipt }) => {
             </label>
             <select
               onChange={(e) => setPaySelect(e.target.value)}
-              class="select select-secondary w-3/4 rounded px-2 bg-gray-100 focus:outline-none border-none max-h-8 min-h-6"
+              className="select select-secondary w-3/4 rounded px-2 bg-gray-100 focus:outline-none border-none max-h-8 min-h-6"
             >
               <option value="Cash" selected>
                 Cash
